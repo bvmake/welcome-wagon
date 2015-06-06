@@ -101,7 +101,7 @@ function(request, response){
                     }
                     else {
                         console.log(row.email);
-                        guests.push({id: row.id, email: row.email, firstName: row.firstName, lastName: row.lastName});
+                        guests.push({id: row.id, email: row.email, firstName: row.firstName, lastName: row.lastName, fullName: row.firstName + ' ' + row.lastName});
                     }
                 },
                 function () {

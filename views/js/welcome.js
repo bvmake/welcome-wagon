@@ -2,29 +2,7 @@
 
 	function pageLoaded () {
 		$('#submit').on('click', submitGuest);
-		//load();
 	}
-
-	function loaded (data) {
-		var todos = data || [];
-
-		$('#todos').empty();
-		for (var i = 0; i < todos.length; i++) {
-			$('#todos').append('<li data-id="'+todos[i].id+'"><span>'+todos[i].guest+'</span><button class="delete">x</button></li>');
-		}
-	}
-
-	/* TODO: implement errorOccurred */
-
-	/*
-	function load () {
-		$.ajax({
-			url: '/guests',
-			success: loaded,
-			//error: errorOccurred
-		});
-	}
-	*/
 
 	function postSent () {
 		$('#welcome').hide();
