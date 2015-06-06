@@ -73,3 +73,20 @@ input
 	display: block;
 	margin: 5px auto;
 }
+
+#name span
+{
+    animation: fadeOutName 5s;
+}
+
+@keyframes fadeOutName 
+{
+    from
+    {
+        opacity:1;
+    }
+    to
+    {
+        opacity:0;
+    }
+}

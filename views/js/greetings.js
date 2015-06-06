@@ -16,7 +16,7 @@
         function showName() {
             if (guests.length > 0) { 
                 //if position goes past end of array, set to zero
-                $('#name').html(guests[(position + 1 >= guests.length ? position = 0 : ++position)].fullName); 
+                $('#name').html('<span>' + guests[(position + 1 >= guests.length ? position = 0 : ++position)].fullName + '</span>'); 
             }
             setTimeout(showName, 5000);
 	}
