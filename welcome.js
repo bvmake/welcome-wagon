@@ -20,7 +20,7 @@ var http = require('http'),
 
         var error = '';
 
-        db.run("CREATE TABLE if not exists guests (email TEXT, firstName TEXT, lastName TEXT);");
+        db.run("CREATE TABLE if not exists guests (id INTEGER PRIMARY KEY, email TEXT, firstName TEXT, lastName TEXT);");
     });
 
     //Passing a parameter to this function assigns a close handler
@@ -68,6 +68,8 @@ function(request, response){
                     stmt.finalize();
 
                     //TODO: How do we check for errors here? try/catch?
+                    console.log('Inserted row');
+	
 
                     //This is blocking. To make it non-blocking, stick it outside request.on
                     response.writeHead(200, { 'Content-Type': 'text/plain' });
@@ -79,7 +81,7 @@ function(request, response){
             }
         });
     }
-    if (path == '/guests') {
+    else if (path == '/guests') {
         console.log('Received request for guests')
         var guests = [];
 
@@ -99,7 +101,7 @@ function(request, response){
                     }
                     else {
                         console.log(row.email);
-                        guests.push({email: row.email, firstName: row.firstName, lastName: row.lastName});
+                        guests.push({id: row.id, email: row.email, firstName: row.firstName, lastName: row.lastName});
                     }
                 },
                 function () {

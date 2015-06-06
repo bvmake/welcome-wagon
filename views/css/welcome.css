@@ -53,18 +53,19 @@ legend
 {
 }
 
+
+#howdy.show
+{
+	position: initial;
+	-webkit-clip-path: none;
+	clip-path: none;
+}
+
 #howdy
 {
 	position: absolute;
 	-webkit-clip-path: circle(0px at center);
 	clip-path: circle(0px at center);
-}
-
-#howdy .show
-{
-	position: initial;
-	-webkit-clip-path: none;
-	clip-path: none;
 }
 
 input 
